@@ -8,20 +8,6 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface Cv2XkilianWlList {
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
-    }
 }
 declare global {
     interface HTMLCv2XkilianWlListElement extends Components.Cv2XkilianWlList, HTMLStencilElement {
@@ -30,37 +16,15 @@ declare global {
         prototype: HTMLCv2XkilianWlListElement;
         new (): HTMLCv2XkilianWlListElement;
     };
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
-    }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
-    };
     interface HTMLElementTagNameMap {
         "cv2-xkilian-wl-list": HTMLCv2XkilianWlListElement;
-        "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
     interface Cv2XkilianWlList {
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
-    }
     interface IntrinsicElements {
         "cv2-xkilian-wl-list": Cv2XkilianWlList;
-        "my-component": MyComponent;
     }
 }
 export { LocalJSX as JSX };
@@ -68,7 +32,6 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "cv2-xkilian-wl-list": LocalJSX.Cv2XkilianWlList & JSXBase.HTMLAttributes<HTMLCv2XkilianWlListElement>;
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
 }

@@ -7,12 +7,10 @@ describe('cv2-xkilian-wl-list', () => {
       components: [Cv2XkilianWlList],
       html: `<cv2-xkilian-wl-list></cv2-xkilian-wl-list>`,
     });
-    expect(page.root).toEqualHtml(`
-      <cv2-xkilian-wl-list>
-        <mock:shadow-root>
-          <slot></slot>
-        </mock:shadow-root>
-      </cv2-xkilian-wl-list>
-    `);
+    const wlList = page.rootInstance as Cv2XkilianWlList;
+    const expectedPatients = wlList?.waitingPatients?.length
+
+    const items = page.root.shadowRoot.querySelectorAll("md-list-item");
+    expect(items.length).toEqual(expectedPatients);
   });
 });
