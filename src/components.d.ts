@@ -6,10 +6,43 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface Cv2KilianAmbulanceWlEditor {
+        "entryId": string;
+    }
+    interface Cv2XkilianAmbulanceWlApp {
+        "basePath": string;
+    }
     interface Cv2XkilianWlList {
     }
 }
+export interface Cv2KilianAmbulanceWlEditorCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCv2KilianAmbulanceWlEditorElement;
+}
 declare global {
+    interface HTMLCv2KilianAmbulanceWlEditorElementEventMap {
+        "editor-closed": string;
+    }
+    interface HTMLCv2KilianAmbulanceWlEditorElement extends Components.Cv2KilianAmbulanceWlEditor, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLCv2KilianAmbulanceWlEditorElementEventMap>(type: K, listener: (this: HTMLCv2KilianAmbulanceWlEditorElement, ev: Cv2KilianAmbulanceWlEditorCustomEvent<HTMLCv2KilianAmbulanceWlEditorElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLCv2KilianAmbulanceWlEditorElementEventMap>(type: K, listener: (this: HTMLCv2KilianAmbulanceWlEditorElement, ev: Cv2KilianAmbulanceWlEditorCustomEvent<HTMLCv2KilianAmbulanceWlEditorElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLCv2KilianAmbulanceWlEditorElement: {
+        prototype: HTMLCv2KilianAmbulanceWlEditorElement;
+        new (): HTMLCv2KilianAmbulanceWlEditorElement;
+    };
+    interface HTMLCv2XkilianAmbulanceWlAppElement extends Components.Cv2XkilianAmbulanceWlApp, HTMLStencilElement {
+    }
+    var HTMLCv2XkilianAmbulanceWlAppElement: {
+        prototype: HTMLCv2XkilianAmbulanceWlAppElement;
+        new (): HTMLCv2XkilianAmbulanceWlAppElement;
+    };
     interface HTMLCv2XkilianWlListElement extends Components.Cv2XkilianWlList, HTMLStencilElement {
     }
     var HTMLCv2XkilianWlListElement: {
@@ -17,13 +50,24 @@ declare global {
         new (): HTMLCv2XkilianWlListElement;
     };
     interface HTMLElementTagNameMap {
+        "cv2-kilian-ambulance-wl-editor": HTMLCv2KilianAmbulanceWlEditorElement;
+        "cv2-xkilian-ambulance-wl-app": HTMLCv2XkilianAmbulanceWlAppElement;
         "cv2-xkilian-wl-list": HTMLCv2XkilianWlListElement;
     }
 }
 declare namespace LocalJSX {
+    interface Cv2KilianAmbulanceWlEditor {
+        "entryId"?: string;
+        "onEditor-closed"?: (event: Cv2KilianAmbulanceWlEditorCustomEvent<string>) => void;
+    }
+    interface Cv2XkilianAmbulanceWlApp {
+        "basePath"?: string;
+    }
     interface Cv2XkilianWlList {
     }
     interface IntrinsicElements {
+        "cv2-kilian-ambulance-wl-editor": Cv2KilianAmbulanceWlEditor;
+        "cv2-xkilian-ambulance-wl-app": Cv2XkilianAmbulanceWlApp;
         "cv2-xkilian-wl-list": Cv2XkilianWlList;
     }
 }
@@ -31,6 +75,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "cv2-kilian-ambulance-wl-editor": LocalJSX.Cv2KilianAmbulanceWlEditor & JSXBase.HTMLAttributes<HTMLCv2KilianAmbulanceWlEditorElement>;
+            "cv2-xkilian-ambulance-wl-app": LocalJSX.Cv2XkilianAmbulanceWlApp & JSXBase.HTMLAttributes<HTMLCv2XkilianAmbulanceWlAppElement>;
             "cv2-xkilian-wl-list": LocalJSX.Cv2XkilianWlList & JSXBase.HTMLAttributes<HTMLCv2XkilianWlListElement>;
         }
     }
