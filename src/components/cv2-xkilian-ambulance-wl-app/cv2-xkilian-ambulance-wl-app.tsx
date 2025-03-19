@@ -54,9 +54,9 @@ export class Cv2XkilianAmbulanceWlApp {
     return (
       <Host>
         { element === "editor"
-          ? <cv2-xkilian-ambulance-wl-editor entry-id={entryId}
+          ? <cv2-kilian-ambulance-wl-editor entry-id={entryId}
           oneditor-closed={ () => navigate("./list")} >
-        </cv2-xkilian-ambulance-wl-editor>
+        </cv2-kilian-ambulance-wl-editor>
           : <cv2-xkilian-wl-list  ambulance-id={this.ambulanceId} api-base={this.apiBase}
             onentry-clicked={ (ev: CustomEvent<string>)=> navigate("./entry/" + ev.detail) } >
           </cv2-xkilian-wl-list>

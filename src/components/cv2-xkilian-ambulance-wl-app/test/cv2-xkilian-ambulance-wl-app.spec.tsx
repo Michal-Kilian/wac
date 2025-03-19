@@ -1,7 +1,7 @@
 import { newSpecPage } from '@stencil/core/testing';
 import { Cv2XkilianAmbulanceWlApp } from '../cv2-xkilian-ambulance-wl-app';
 
-describe('<pfx>-ambulance-wl-app', () => {
+describe('cv2-xkilian-ambulance-wl-app', () => {
 
   it('renders editor', async () => {
     const page = await newSpecPage({
@@ -11,7 +11,7 @@ describe('<pfx>-ambulance-wl-app', () => {
     });
     page.win.navigation = new EventTarget()
     const child = await page.root.shadowRoot.firstElementChild;
-    expect(child.tagName.toLocaleLowerCase()).toEqual ("cv2-xkilian-ambulance-wl-editor");
+    expect(child.tagName.toLocaleLowerCase()).toEqual ("cv2-kilian-ambulance-wl-editor");
 
   });
 
