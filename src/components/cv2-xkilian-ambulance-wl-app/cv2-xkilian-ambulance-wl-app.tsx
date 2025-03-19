@@ -13,6 +13,8 @@ export class Cv2XkilianAmbulanceWlApp {
   @State() private relativePath = "";
 
   @Prop() basePath: string="";
+  @Prop() apiBase: string;
+  @Prop() ambulanceId: string;
 
   componentWillLoad() {
     const baseUri = new URL(this.basePath, document.baseURI || "/").pathname;
@@ -55,7 +57,7 @@ export class Cv2XkilianAmbulanceWlApp {
           ? <cv2-xkilian-ambulance-wl-editor entry-id={entryId}
           oneditor-closed={ () => navigate("./list")} >
         </cv2-xkilian-ambulance-wl-editor>
-          : <cv2-xkilian-wl-list
+          : <cv2-xkilian-wl-list  ambulance-id={this.ambulanceId} api-base={this.apiBase}
             onentry-clicked={ (ev: CustomEvent<string>)=> navigate("./entry/" + ev.detail) } >
           </cv2-xkilian-wl-list>
         }

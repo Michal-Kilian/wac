@@ -10,14 +10,22 @@ export namespace Components {
         "entryId": string;
     }
     interface Cv2XkilianAmbulanceWlApp {
+        "ambulanceId": string;
+        "apiBase": string;
         "basePath": string;
     }
     interface Cv2XkilianWlList {
+        "ambulanceId": string;
+        "apiBase": string;
     }
 }
 export interface Cv2KilianAmbulanceWlEditorCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLCv2KilianAmbulanceWlEditorElement;
+}
+export interface Cv2XkilianWlListCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLCv2XkilianWlListElement;
 }
 declare global {
     interface HTMLCv2KilianAmbulanceWlEditorElementEventMap {
@@ -43,7 +51,18 @@ declare global {
         prototype: HTMLCv2XkilianAmbulanceWlAppElement;
         new (): HTMLCv2XkilianAmbulanceWlAppElement;
     };
+    interface HTMLCv2XkilianWlListElementEventMap {
+        "entry-clicked": string;
+    }
     interface HTMLCv2XkilianWlListElement extends Components.Cv2XkilianWlList, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLCv2XkilianWlListElementEventMap>(type: K, listener: (this: HTMLCv2XkilianWlListElement, ev: Cv2XkilianWlListCustomEvent<HTMLCv2XkilianWlListElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLCv2XkilianWlListElementEventMap>(type: K, listener: (this: HTMLCv2XkilianWlListElement, ev: Cv2XkilianWlListCustomEvent<HTMLCv2XkilianWlListElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLCv2XkilianWlListElement: {
         prototype: HTMLCv2XkilianWlListElement;
@@ -61,9 +80,14 @@ declare namespace LocalJSX {
         "onEditor-closed"?: (event: Cv2KilianAmbulanceWlEditorCustomEvent<string>) => void;
     }
     interface Cv2XkilianAmbulanceWlApp {
+        "ambulanceId"?: string;
+        "apiBase"?: string;
         "basePath"?: string;
     }
     interface Cv2XkilianWlList {
+        "ambulanceId"?: string;
+        "apiBase"?: string;
+        "onEntry-clicked"?: (event: Cv2XkilianWlListCustomEvent<string>) => void;
     }
     interface IntrinsicElements {
         "cv2-kilian-ambulance-wl-editor": Cv2KilianAmbulanceWlEditor;
